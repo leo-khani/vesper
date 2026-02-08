@@ -74,7 +74,6 @@ func _on_health_set(new_value: float) -> void:
 	health = clampf(new_value, 0, current_max_health)
 	# Round the health to be an integer
 	health = round(health)
-	health_changed.emit()
 
 
 func _on_experience_set(new_value: float) -> void:
@@ -82,7 +81,6 @@ func _on_experience_set(new_value: float) -> void:
 	experience = new_value
 
 	if old_level != level:
-		level_up.emit()
 		recalculate_stats()
 
 func add_xp(amount: float) -> void:
