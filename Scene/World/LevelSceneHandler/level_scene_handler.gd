@@ -10,7 +10,7 @@ func _ready():
 	start_level()
 
 func start_level() -> void:
-	GameManager.current_state = GameManager.GameState.PLAYING
+	#GameManager.current_state = GameManager.GameState.PLAYING
 	_spwan_player()
 
 

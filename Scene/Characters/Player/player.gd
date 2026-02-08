@@ -109,3 +109,8 @@ func _reset_tilt_animation() -> void:
 func _reset_tweens(tween: Tween) -> void: if tween:	tween.kill()
 
 #endregion
+
+#region InputSystem
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("execute_spell"):
+		GameManager.toggle_execute_spell_state()

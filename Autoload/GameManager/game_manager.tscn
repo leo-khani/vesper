@@ -4,3 +4,9 @@
 
 [node name="GameManager" type="Node" unique_id=60120539]
 script = ExtResource("1_7d62b")
+
+[node name="ExecuteSpellTimer" type="Timer" parent="." unique_id=30281771]
+process_mode = 3
+wait_time = 5.0
+
+[connection signal="timeout" from="ExecuteSpellTimer" to="." method="_on_execute_spell_timer_timeout"]

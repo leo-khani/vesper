@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bqducihwcx15r" path="res://Scene/Characters/Player/player.gd" id="1_g8ujb"]
 [ext_resource type="Texture2D" uid="uid://cgsgb2owi2qu1" path="res://Asset/Characters/Player/player_sheet.png" id="1_mayag"]
 [ext_resource type="PackedScene" uid="uid://npmf7t12pyoo" path="res://Scene/Characters/Player/player_ui.tscn" id="3_i5d5d"]
+[ext_resource type="Script" uid="uid://djd37r0gt1wwr" path="res://Scene/Characters/Player/SpellPerformer/spell_manager.gd" id="4_3r8qg"]
+[ext_resource type="Script" uid="uid://sjde7gpq6ueb" path="res://Scene/Characters/Player/SpellPerformer/spell_performer.gd" id="5_0i48j"]
+[ext_resource type="Script" uid="uid://jqpixnxgxova" path="res://Resource/Spells/SpellStats.gd.gd" id="6_bqcu7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8ujb"]
 atlas = ExtResource("1_mayag")
@@ -56,6 +59,11 @@ animations = [{
 radius = 5.0
 height = 18.0
 
+[sub_resource type="Resource" id="Resource_ete61"]
+script = ExtResource("6_bqcu7")
+combo_sequence = Array[int]([0, 1, 0, 1])
+metadata/_custom_type_script = "uid://jqpixnxgxova"
+
 [node name="Player" type="CharacterBody2D" unique_id=1379789776]
 script = ExtResource("1_g8ujb")
 
@@ -71,3 +79,11 @@ shape = SubResource("CapsuleShape2D_g8ujb")
 zoom = Vector2(3, 3)
 
 [node name="PlayerUI" parent="." unique_id=996938856 instance=ExtResource("3_i5d5d")]
+
+[node name="SpellManager" type="Node" parent="." unique_id=1679105461]
+script = ExtResource("4_3r8qg")
+
+[node name="SpellPerformer" type="Node" parent="SpellManager" unique_id=1382625610]
+script = ExtResource("5_0i48j")
+available_spells = Array[ExtResource("6_bqcu7")]([SubResource("Resource_ete61")])
+metadata/_custom_type_script = "uid://sjde7gpq6ueb"
