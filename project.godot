@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 NodeManager="*uid://1v6ryi4df1ia"
 GameManager="*uid://1b5r0mrc6ycb"
 
+[gui]
+
+theme/custom_font="uid://bw70x6tl7rr12"
+
 [input]
 
 move_up={

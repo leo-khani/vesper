@@ -4,10 +4,12 @@ extends Node
 enum GameState {
 	MAIN_MENU,
 	PLAYING,
+	LEVELING_UP,
 	SHOP,
 	PAUSED,
 	GAME_OVER,
 }
+
 
 @export var current_state: GameState = GameState.MAIN_MENU: set = _on_state_changed
 
