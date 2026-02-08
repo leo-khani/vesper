@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dlm33d1wwcgjw"]
+
+[ext_resource type="Script" uid="uid://b77noq2pi5o75" path="res://Scene/Characters/Player/SpellPerformer/spell_card.gd" id="1_7v31v"]
+[ext_resource type="Texture2D" uid="uid://bpgp540t1fx2j" path="res://Asset/UI/Arrows/Sprite-0001.png" id="2_h8kft"]
+[ext_resource type="Script" uid="uid://jqpixnxgxova" path="res://Resource/Spells/SpellStats.gd.gd" id="3_u144i"]
+[ext_resource type="Texture2D" uid="uid://cgh8sx650qjg2" path="res://Asset/UI/GodotIcons/canon.png" id="4_uimli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdr0k"]
+atlas = ExtResource("2_h8kft")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8kft"]
+atlas = ExtResource("2_h8kft")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u144i"]
+atlas = ExtResource("2_h8kft")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uimli"]
+atlas = ExtResource("2_h8kft")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_o40bu"]
+script = ExtResource("3_u144i")
+spell_icon = ExtResource("4_uimli")
+combo_sequence = Array[int]([0, 1, 2, 0])
+metadata/_custom_type_script = "uid://jqpixnxgxova"
+
+[node name="SpellCard" type="Control" unique_id=1286830441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7v31v")
+texture_up = SubResource("AtlasTexture_sdr0k")
+texture_down = SubResource("AtlasTexture_h8kft")
+texture_left = SubResource("AtlasTexture_u144i")
+texture_right = SubResource("AtlasTexture_uimli")
+example_spell = SubResource("Resource_o40bu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=634176792]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1875849152]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=491170154]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InputsHBox" type="HBoxContainer" parent="HBoxContainer" unique_id=2023461011]
+unique_name_in_owner = true
+layout_mode = 2

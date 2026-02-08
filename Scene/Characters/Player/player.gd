@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var spell_manager: Node = $SpellManager
+@onready var spell_performer: Node = $SpellManager/SpellPerformer
 
 @export_category("Player Settings")
 @export var stats: PlayerStats = PlayerStats.new()
@@ -112,5 +114,6 @@ func _reset_tweens(tween: Tween) -> void: if tween:	tween.kill()
 
 #region InputSystem
 func _input(event: InputEvent) -> void:
+	# Handle spell execution input
 	if event.is_action_pressed("execute_spell"):
 		GameManager.toggle_execute_spell_state()

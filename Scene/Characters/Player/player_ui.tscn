@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c32rlxywtfh5b" path="res://Scene/Characters/Player/player_ui.gd" id="1_losfk"]
 [ext_resource type="Script" uid="uid://cxiyaouvcqyy6" path="res://Scene/Characters/Player/xp_bar.gd" id="2_475hq"]
 [ext_resource type="Shader" uid="uid://7408lkwkfk6w" path="res://Scene/Characters/Player/balatro_background.gdshader" id="3_2pcfx"]
+[ext_resource type="Script" uid="uid://dg1qi5lwljy7x" path="res://Scene/Characters/Player/SpellPerformer/spells_panel.gd" id="4_hacio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_losfk"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -60,3 +61,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SpellsPanel" type="Control" parent="." unique_id=1683144071]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 291.0
+grow_vertical = 2
+script = ExtResource("4_hacio")
+
+[node name="MarginContainer" type="MarginContainer" parent="SpellsPanel" unique_id=571901373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpellsPanel/MarginContainer" unique_id=315073292]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SpellsPanel/MarginContainer/VBoxContainer" unique_id=541427767]
+layout_mode = 2
+text = "
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="SpellsPanel/MarginContainer/VBoxContainer" unique_id=1114584593]
+layout_mode = 2
+text = "Spells"
+horizontal_alignment = 1
+
+[node name="SpellsVBox" type="VBoxContainer" parent="SpellsPanel/MarginContainer/VBoxContainer" unique_id=1715494674]
+unique_name_in_owner = true
+layout_mode = 2

@@ -54,6 +54,7 @@ func _on_spell_cast(spell: SpellStats) -> void:
 
 func _on_combo_failed() -> void:
 	print("❌ Invalid combo - sequence reset")
+	GameManager.toggle_execute_spell_state()  # Exit execute spell mode on failure
 	# Play error sound
 	# Show UI feedback
 

@@ -67,6 +67,12 @@ func _add_input(direction: SpellStats.Direction) -> void:
 		combo_failed.emit()
 		return
 	
+	# Check if current sequence is a valid prefix for any spell (Helldivers-style)
+	if not _is_valid_prefix():
+		combo_failed.emit()
+		_reset_combo()
+		return
+	
 	# Check for matching combos
 	_check_for_combo()
 
@@ -84,6 +90,26 @@ func _check_for_combo() -> void:
 			_start_cooldown(spell)
 			_reset_combo()
 			return
+
+
+func _is_valid_prefix() -> bool:
+	"""Check if current input sequence could lead to any valid spell (Helldivers-style)"""
+	for spell in available_spells:
+		# Skip spells shorter than current sequence
+		if spell.combo_sequence.size() < current_input_sequence.size():
+			continue
+		
+		# Check if spell's combo starts with current sequence
+		var matches = true
+		for i in range(current_input_sequence.size()):
+			if spell.combo_sequence[i] != current_input_sequence[i]:
+				matches = false
+				break
+		
+		if matches:
+			return true
+	
+	return false
 
 
 func _reset_combo() -> void:
