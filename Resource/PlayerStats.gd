@@ -58,6 +58,9 @@ func recalculate_stats() -> void:
 	var stats_sample_pos: float = (float(level) / 100.0) - 0.01
 	#current_move_speed = base_move_speed * STATS_CURVES[BuffableStats.MOVE_SPEED].sample(stats_sample_pos)
 
+	current_move_speed = base_move_speed
+
+
 	# Initialize experience multiplier
 	current_experience_multiplier = base_experience_multiplier
 	current_max_health = base_max_health

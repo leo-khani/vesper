@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dn76xm2s1jd5u"]
+
+[ext_resource type="Texture2D" uid="uid://ltu7tywkcht5" path="res://icon.svg" id="1_7v0u5"]
+[ext_resource type="PackedScene" uid="uid://wnmn5v52tyxt" path="res://Scene/Characters/Player/Player.tscn" id="2_m34pd"]
+
+[node name="WorldTestScene" type="Node2D" unique_id=151260860]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1010809225]
+position = Vector2(-23, 240)
+texture = ExtResource("1_7v0u5")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=660436157]
+position = Vector2(90, 40)
+texture = ExtResource("1_7v0u5")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=517886986]
+position = Vector2(-172, -63)
+texture = ExtResource("1_7v0u5")
+
+[node name="Player" parent="." unique_id=1379789776 instance=ExtResource("2_m34pd")]
