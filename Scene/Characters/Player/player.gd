@@ -23,6 +23,10 @@ var is_moving: bool = false
 # Tweens
 var tilt_tween: Tween
 
+
+func _ready():
+	NodeManager.player_node = self
+
 #region MovementSystem
 func _physics_process(delta):
 	_handle_movement(delta)
@@ -30,7 +34,6 @@ func _physics_process(delta):
 	_update_animation_state() 
 	_update_tilt_animation() 
 	move_and_slide()
-
 
 
 func _handle_movement(_delta):

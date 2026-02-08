@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqducihwcx15r" path="res://Scene/Characters/Player/player.gd" id="1_g8ujb"]
 [ext_resource type="Texture2D" uid="uid://cgsgb2owi2qu1" path="res://Asset/Characters/Player/player_sheet.png" id="1_mayag"]
+[ext_resource type="PackedScene" uid="uid://npmf7t12pyoo" path="res://Scene/Characters/Player/player_ui.tscn" id="3_i5d5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8ujb"]
 atlas = ExtResource("1_mayag")
@@ -61,10 +62,12 @@ script = ExtResource("1_g8ujb")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=573244976]
 sprite_frames = SubResource("SpriteFrames_i5d5d")
 animation = &"run"
-frame_progress = 0.9248542
+frame_progress = 0.7996971
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206745244]
 shape = SubResource("CapsuleShape2D_g8ujb")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1875551282]
 zoom = Vector2(3, 3)
+
+[node name="PlayerUI" parent="." unique_id=996938856 instance=ExtResource("3_i5d5d")]

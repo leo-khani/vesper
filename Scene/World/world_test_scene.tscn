@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://dn76xm2s1jd5u"]
 
 [ext_resource type="Texture2D" uid="uid://ltu7tywkcht5" path="res://icon.svg" id="1_7v0u5"]
+[ext_resource type="Script" uid="uid://ce52ro5lhmm6f" path="res://Scene/World/LevelSceneHandler/level_scene_handler.gd" id="1_m34pd"]
 [ext_resource type="PackedScene" uid="uid://wnmn5v52tyxt" path="res://Scene/Characters/Player/Player.tscn" id="2_m34pd"]
 
-[node name="WorldTestScene" type="Node2D" unique_id=151260860]
+[node name="WorldTestScene" type="Node2D" unique_id=1578256623]
+script = ExtResource("1_m34pd")
+metadata/_custom_type_script = "uid://ce52ro5lhmm6f"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1010809225]
 position = Vector2(-23, 240)

@@ -17,11 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-CreditManager="*uid://xnq873njfojg"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/credit_manager/plugin.cfg")
+NodeManager="*uid://1v6ryi4df1ia"
+GameManager="*uid://1b5r0mrc6ycb"
 
 [input]
 

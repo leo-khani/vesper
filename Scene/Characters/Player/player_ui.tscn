@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://npmf7t12pyoo"]
+
+[ext_resource type="Script" uid="uid://c32rlxywtfh5b" path="res://Scene/Characters/Player/player_ui.gd" id="1_losfk"]
+[ext_resource type="Script" uid="uid://cxiyaouvcqyy6" path="res://Scene/Characters/Player/xp_bar.gd" id="2_475hq"]
+[ext_resource type="Shader" uid="uid://7408lkwkfk6w" path="res://Scene/Characters/Player/balatro_background.gdshader" id="3_2pcfx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_losfk"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_475hq"]
+bg_color = Color(0.13193765, 0.62438077, 1.92523e-07, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hacio"]
+shader = ExtResource("3_2pcfx")
+shader_parameter/spin_rotation_speed = 2.0
+shader_parameter/move_speed = 7.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.871, 0.267, 0.231, 1)
+shader_parameter/colour_2 = Color(0, 0.42, 0.706, 1)
+shader_parameter/colour_3 = Color(0.086, 0.137, 0.145, 1)
+shader_parameter/contrast = 3.5
+shader_parameter/lighting = 0.4
+shader_parameter/spin_amount = 0.25
+shader_parameter/pixel_filter = 740.0
+shader_parameter/is_rotating = false
+
+[node name="PlayerUI" type="CanvasLayer" unique_id=996938856]
+script = ExtResource("1_losfk")
+
+[node name="XPProgressUI" type="Control" parent="." unique_id=220188632]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="XPBar" type="ProgressBar" parent="XPProgressUI" unique_id=1616970525]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_losfk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_475hq")
+value = 20.0
+show_percentage = false
+script = ExtResource("2_475hq")
+debug_prints = true
+
+[node name="ColorRect" type="ColorRect" parent="XPProgressUI/XPBar" unique_id=1143160388]
+material = SubResource("ShaderMaterial_hacio")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
