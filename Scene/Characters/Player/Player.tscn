@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wnmn5v52tyxt"]
 
+[ext_resource type="Script" uid="uid://bqducihwcx15r" path="res://Scene/Characters/Player/player.gd" id="1_g8ujb"]
 [ext_resource type="Texture2D" uid="uid://cgsgb2owi2qu1" path="res://Asset/Characters/Player/player_sheet.png" id="1_mayag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8ujb"]
@@ -51,10 +52,11 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1379789776]
+script = ExtResource("1_g8ujb")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=573244976]
 sprite_frames = SubResource("SpriteFrames_i5d5d")
 animation = &"run"
-frame_progress = 0.54050076
+frame_progress = 0.255589
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206745244]
